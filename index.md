@@ -24,7 +24,7 @@ feature_row:
 feature_row2:
   - image_path: /assets/images/moabogey-image-1-th.jpg
     alt: "placeholder image 1"
-    title:     title: "간단한 개발 환경"
+    title: "간단한 개발 환경"
     excerpt: "아나콘다와 마이크로소프트 비주얼 스튜디오 코드로 개발 환경을 간단하게 구축할 수 있습니다. 그리고 이 모든 것이 **공짜**입니다."
 feature_row3:
   - image_path: /assets/images/moabogey-image-2-th.jpg
