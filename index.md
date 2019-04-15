@@ -23,28 +23,19 @@ feature_row:
     excerpt: "개발한 봇을 등록하고 승인이 완료 되면 **모아보기(moaBogey)** 모바일 앱을 통해서 누구나 컨텐츠를 감상할 수 있습니다."
 feature_row2:
   - image_path: /assets/images/moabogey-image-1-th.jpg
-    alt: "placeholder image 2"
-    title: "Placeholder Image Left Aligned"
-    excerpt: 'This is some sample content that goes here with **Markdown** formatting. Left aligned with `type="left"`'
-    url: "#test-link"
-    btn_label: "Read More"
-    btn_class: "btn--primary"
+    alt: "placeholder image 1"
+    title:     title: "간단한 개발 환경"
+    excerpt: "아나콘다와 마이크로소프트 비주얼 스튜디오 코드로 개발 환경을 간단하게 구축할 수 있습니다. 그리고 이 모든 것이 **공짜**입니다."
 feature_row3:
   - image_path: /assets/images/moabogey-image-2-th.jpg
     alt: "placeholder image 2"
-    title: "Placeholder Image Right Aligned"
-    excerpt: 'This is some sample content that goes here with **Markdown** formatting. Right aligned with `type="right"`'
-    url: "#test-link"
-    btn_label: "Read More"
-    btn_class: "btn--primary"
+    title: "쉬운 코딩"
+    excerpt: "복잡한 알고리즘은 필요 없습니다. 파이썬으로 **170줄** 정도의 코딩으로 봇을 만들 수 있습니다."
 feature_row4:
   - image_path: /assets/images/unsplash-gallery-image-2-th.jpg
-    alt: "placeholder image 2"
-    title: "Placeholder Image Center Aligned"
-    excerpt: 'This is some sample content that goes here with **Markdown** formatting. Centered with `type="center"`'
-    url: "#test-link"
-    btn_label: "Read More"
-    btn_class: "btn--primary"
+    alt: "placeholder image 3"
+    title: "모바일 앱으로 컨텐츠 공유"
+    excerpt: "개발한 봇을 등록하고 승인이 완료 되면 **모아보기(moaBogey)** 모바일 앱을 통해서 누구나 컨텐츠를 감상할 수 있습니다."
 ---
 
 {% include feature_row id="intro" type="center" %}
@@ -57,4 +48,4 @@ feature_row4:
 
 {% include feature_row id="feature_row3" type="right" %}
 
-{% include feature_row id="feature_row4" type="center" %}
+{% include feature_row id="feature_row4" type="left" %}
