@@ -486,3 +486,144 @@ else:
 </div>
 
 
+
+
+
+<style>
+  .card {
+    width: 340px;
+    padding-bottom: 20px;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .center {
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .card_item {
+    width: 340px;
+    padding: 5px 10px;
+  }
+  hr { 
+    display: flex;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: 100px;
+    border-style: inset;
+    border-width: 1px;
+  } 
+  h5 {
+  	color: blue;
+  }
+</style>
+<div class="card">
+  <img src=https://pbs.twimg.com/media/D6frDlLU8AAPWNb.jpg alt="Image" class="center">
+  <div class="card_item">
+    <h5>Twitter</h5>
+    <h4><b>“When the @jonasbrothers and @BTS_twt say they have a surprise... WE LISTEN! 😍😱 https://t.co/UIyoSnfnXT”</b></h4> 
+    <hr>
+    <p> By The Voice </p>
+  </div>
+</div>
+
+
+
+
+
+<style>
+  .card {
+    width: 340px;
+    padding-bottom: 20px;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .center {
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .card_item {
+    width: 340px;
+    padding: 5px 10px;
+  }
+  hr { 
+    display: flex;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: 100px;
+    border-style: inset;
+    border-width: 1px;
+  } 
+  h5 {
+  	color: blue;
+  }
+</style>
+<div class="card">
+  <img src=https://pbs.twimg.com/media/D6fccVIUIAADMSW.jpg:large alt="Image" class="center">
+  <div class="card_item">
+    <h5>Twitter</h5>
+    <h4><b>“[디패TV] 방탄소년단 진의 최애브랜드 ‘톰브라운’ (BTS JIN♥️Thom Browne)</b></h4> 
+    <hr>
+    <p> By korea dispatch </p>
+  </div>
+</div>
+
+
+
+
+
+<style>
+  .card {
+    width: 340px;
+    padding-bottom: 20px;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .center {
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .card_item {
+    width: 340px;
+    padding: 5px 10px;
+  }
+  hr { 
+    display: flex;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: 100px;
+    border-style: inset;
+    border-width: 1px;
+  } 
+  h5 {
+  	color: blue;
+  }
+</style>
+<div class="card">
+  <img src=https://pbs.twimg.com/ext_tw_video_thumb/1128118216792788992/pu/img/bzI9kPny66yObans.jpg alt="Image" class="center">
+  <div class="card_item">
+    <h5>Twitter</h5>
+    <h4><b>“GWANG</b></h4> 
+    <hr>
+    <p> By BT21 </p>
+  </div>
+</div>
+
+
