@@ -3,176 +3,177 @@ layout: default
 title: bts_army_on_twitter
 ---
 
- ## BTS 아미 트윗 🤖
+## BTS 아미 트윗 🤖
 
- 방탄소년단 아미의 트윗을 모아주는 봇입니다.
+방탄소년단 아미의 트윗을 모아주는 봇입니다.
 
- - 개발자: skettee
+- 개발자: skettee
 
- - 깃허브 주소: [bts_army_on_twitter](https://github.com/skettee/bts_army_on_twitter)
+- 깃허브 주소: [bts_army_on_twitter](https://github.com/skettee/bts_army_on_twitter)
 
 
- ### 개발 환경 만들기
+### 개발 환경 만들기
 
-  봇을 개발하기 위해서는 몇가지 소프트웨어를 설치하고 환경을 설정해야 합니다.
-  [개발 환경 만들기](https://github.com/moabogey/docs/wiki/개발환경만들기)를 참조 하세요.
+봇을 개발하기 위해서는 몇가지 소프트웨어를 설치하고 환경을 설정해야 합니다.
+[개발 환경 만들기](https://github.com/moabogey/docs/wiki/개발환경만들기)를 참조 하세요.
 
 
- ### 코드 실행
+### 코드 실행
 
- - 터미널 실행
+- 터미널 실행
 
-   - (윈도우즈 🖼)  Windows PowerShell을 실행한다.
+  - (윈도우즈 🖼) Windows PowerShell을 실행한다.
 
-   - (맥 🍎) Terminal을 실행한다.
+  - (맥 🍎) Terminal을 실행한다.
 
- - 작업할 폴더를 생성한다.
+- 작업할 폴더를 생성한다.
 
- ```
- mkdir MyWork
- ```
+  ```
+  mkdir MyWork
+  ```
 
- - 작업할 폴더로 이동한다.
+- 작업할 폴더로 이동한다.
 
- ```
- cd MyWork
- ```
+  ```
+  cd MyWork
+  ```
 
- - 깃 클론 (Git Clone)을 수행한다.
+- 깃 클론 (Git Clone)을 수행한다.
 
- ```
- git clone https://github.com/skettee/bts_army_on_twitter.git
- ```
+  ```
+  git clone https://github.com/skettee/bts_army_on_twitter.git
+  ```
 
- - 복사한 코드의 폴더로 이동한다.
+- 복사한 코드의 폴더로 이동한다.
 
- ```
- cd bts_army_on_twitter
- ```
+  ```
+  cd bts_army_on_twitter
+  ```
 
- - VSCode를 실행한다.
+- VSCode를 실행한다.
 
- ```
- code .
- ```
+  ```
+  code .
+  ```
 
- - 왼쪽 EXPLORE에서 `bas_army_on_twitter.py`를 선택한다.
+- 왼쪽 EXPLORE에서 `bas_army_on_twitter.py`를 선택한다.
 
- - 하단 바에 `Python3.7.3 64-bit('base':conda)`를 누른다.
+- 하단 바에 `Python3.7.3 64-bit('base':conda)`를 누른다.
 
- - `Python 3.6.8 64-bit ('moabogey':conda)`를 선택한다.
+- `Python 3.6.8 64-bit ('moabogey':conda)`를 선택한다.
 
- - 소스 코드에 RunCell | Run Below에서 `Run Below`를 누른다.
+- 소스 코드에 `RunCell | Run Below`에서 `Run Below`를 누른다.
 
- - 데이터가 정상적으로 수집이 되는지 오른쪽 Python Interactive에서 확인한다.
+- 데이터가 정상적으로 수집이 되는지 오른쪽 Python Interactive에서 확인한다.
 
 
- ### 코드 분석
+### 코드 분석
 
- bts_army_on_twitter.py를 분석합니다.
- 봇의 소스 코드는 크게 세단계로 나눌 수 있습니다.
+bts_army_on_twitter.py를 분석합니다.
+봇의 소스 코드는 크게 세단계로 나눌 수 있습니다.
 
- 1. 사이트의 HTML에서 데이터를 수집
+1. 사이트의 HTML에서 데이터를 수집
 
- 2. 포스트의 HTML에서 데이터를 수집
+2. 포스트의 HTML에서 데이터를 수집
 
- 3. 데이터 저장
+3. 데이터 저장
 
 
- **사이트의 HTML에서 데이터를 수집**
+**사이트의 HTML에서 데이터를 수집**
 
- - 데이터를 수집할 사이트의 정보와 주소를 설정합니다. 여기에서는 https://twitter.com/BTS_ARMY 에서 데이터를 수집합니다.
+- 데이터를 수집할 사이트의 정보와 주소를 설정합니다. 여기에서는 https://twitter.com/BTS_ARMY 에서 데이터를 수집합니다.
 
- - requests와 beautifulsoup4를 이용해서 사이트의 HTML을 가져오고 파일로 저장합니다.
+- requests와 beautifulsoup4를 이용해서 사이트의 HTML을 가져오고 파일로 저장합니다.
 
- - 저장된 HTML파일 (twitter_source.html)을 열어 봅니다. 여기서 우리는 "포스트의 리스트"를 표현하는 구간을 찾을 것입니다. **포스트**는 제목, 내용, 이미지, 작성자, 작성 날짜 및 페이지 위치(URL)를 가지고 있는 하나의 문서(여기서는 트윗)를 나타내는 용어로 사용합니다.
+- 저장된 HTML파일 (twitter_source.html)을 열어 봅니다. 여기서 우리는 "포스트의 리스트"를 표현하는 구간을 찾을 것입니다. **포스트**는 제목, 내용, 이미지, 작성자, 작성 날짜 및 페이지 위치(URL)를 가지고 있는 하나의 문서(여기서는 트윗)를 나타내는 용어로 사용합니다.
 
- ```
- +-------------+ +-> <div class="content">
- |   Post 1
- |  (Tweet 1)
- +-------------+ +-> </div>
+  ```
+  +-------------+ +-> <div class="content">
+  |   Post 1
+  |  (Tweet 1)
+  +-------------+ +-> </div>
 
- +-------------+ +-> <div class="content">
- |   Post 2
- |  (Tweet 2)
- +-------------+ +-> </div>
+  +-------------+ +-> <div class="content">
+  |   Post 2
+  |  (Tweet 2)
+  +-------------+ +-> </div>
 
- +-------------+ +-> <div class="content">
- |   Post3
- |  (Tweet 3)
- +-------------+ +-> </div>
- ```
+  +-------------+ +-> <div class="content">
+  |   Post3
+  |  (Tweet 3)
+  +-------------+ +-> </div>
+  ```
 
- - 각각의 포스트는 `<div class="content">` 에서 시작 되고 `</div>`로 끝난다는 것을 알아내는 것이 중요합니다. 이것은 사이트마다 다르기 때문에 이것을 찾아내는 것은 약간의 경험이 필요합니다.
+- 각각의 포스트는 `<div class="content">` 에서 시작 되고 `</div>`로 끝난다는 것을 알아내는 것이 중요합니다. 이것은 사이트마다 다르기 때문에 이것을 찾아내는 것은 약간의 경험이 필요합니다.
 
- - 발견한 포스트에서 아래와 같이 작성자, 올린 시간 및 포스트 위치(URL)을 찾습니다.
+- 발견한 포스트에서 아래와 같이 작성자, 올린 시간 및 포스트 위치(URL)을 찾습니다.
 
- ```
- +-------------+
- |   Post 1
- +-------------+
- |  createdBy  +-> <strong class="fullname...> </strong>
- |
- |  post URL   +-> <a class="tweet-timestamp... href=...>
- |
- |  createdAt  +-> <a class="tweet-timestamp... title=...>
- |
- +-------------+
- ```
+  ```
+  +-------------+
+  |   Post 1
+  +-------------+
+  |  createdBy  +-> <strong class="fullname...> </strong>
+  |
+  |  post URL   +-> <a class="tweet-timestamp... href=...>
+  |
+  |  createdAt  +-> <a class="tweet-timestamp... title=...>
+  |
+  +-------------+
+  ```
 
- - 나머지 데이터를 수집하기 위해서 포스트 HTML로 이동합니다.
+- 나머지 데이터를 수집하기 위해서 포스트 HTML로 이동합니다.
 
 
- **포스트의 HTML에서 데이터를 수집**
+**포스트의 HTML에서 데이터를 수집**
 
- - 데이터를 수집할 포스트의 주소를 설정합니다.
+- 데이터를 수집할 포스트의 주소를 설정합니다.
 
- - requests와 beautifulsoup4를 이용해서 사이트의 HTML을 가져오고 파일로 저장합니다.
+- requests와 beautifulsoup4를 이용해서 사이트의 HTML을 가져오고 파일로 저장합니다.
 
- - 저장된 HTML파일 (twitter_post_source.html)을 열어 봅니다. 여기서 우리는 포스트의 제목, 요약, 이미지, 사이트 이름, 포스트 주소(URL), 수집 날짜 및 시간 데이터를 수집할 것입니다.
+- 저장된 HTML파일 (twitter_post_source.html)을 열어 봅니다. 여기서 우리는 포스트의 제목, 요약, 이미지, 사이트 이름, 포스트 주소(URL), 수집 날짜 및 시간 데이터를 수집할 것입니다.
 
 
- **Open Graph Protocol**
+**Open Graph Protocol**
 
- - 대부분의 사이트들은 우리가 수집할 데이터를 사이트의 첫머리에 미리 모아 놓고 있습니다. 이 규약(Protocol)은 사이트를 모두 분석하지 않고도 사이트의 내용을 파악하는데 도움이 됩니다.
+- 대부분의 사이트들은 우리가 수집할 데이터를 사이트의 첫머리에 미리 모아 놓고 있습니다. 이 규약(Protocol)은 사이트를 모두 분석하지 않고도 사이트의 내용을 파악하는데 도움이 됩니다.
 
- - 아래와 같은 메타 태그를 사용합니다.
+- 아래와 같은 메타 태그를 사용합니다.
 
- ```html
- <head>
- ...
-   <meta content="..." property="og:url"/>
-   <meta content="..." property="og:title"/>
-   <meta content="..." property="og:image"/>
-   <meta content="..." property="og:description"/>
-   <meta content="..." property="og:site_name"/>
- ...
- </head>
- ```
+  ```html
+  <head>
+  ...
+    <meta content="..." property="og:url"/>
+    <meta content="..." property="og:title"/>
+    <meta content="..." property="og:image"/>
+    <meta content="..." property="og:description"/>
+    <meta content="..." property="og:site_name"/>
+  ...
+  </head>
+  ```
 
- - 메타 태그에서 데이터를 수집합니다.
+- 메타 태그에서 데이터를 수집합니다.
 
 
- **데이터 저장**
+**데이터 저장**
 
- - 수집한 데이터를 선별해서 중복되는 것을 제외하고 데이터베이스에 저장합니다. 모아보기 봇은 하루에 24번 이상 동작 하도록 되어 있기 때문에 한번에 모든 데이터를 수집하지 않고 가장 최근의 데이터 1~2개를 수집하는 것이 원칙입니다. 여기서는 데이터를 수집한 날짜와 동일한 날에 등록된 포스트만 수집하도록 프로그래밍되어 있습니다.
+- 수집한 데이터를 선별해서 중복되는 것을 제외하고 데이터베이스에 저장합니다. 모아보기 봇은 하루에 24번 이상 동작 하도록 되어 있기 때문에 한번에 모든 데이터를 수집하지 않고 가장 최근의 데이터 1~2개를 수집하는 것이 원칙입니다. 여기서는 데이터를 수집한 날짜와 동일한 날에 등록된 포스트만 수집하도록 프로그래밍되어 있습니다.
 
 
- ### 참고 사이트
+### 참고 사이트
 
- - [개발 환경 만들기](https://github.com/moabogey/docs/wiki/개발환경만들기)
+- [개발 환경 만들기](https://github.com/moabogey/docs/wiki/개발환경만들기)
 
- - [예제 코드 실행](https://github.com/moabogey/docs/wiki/예제코드실행)
+- [예제 코드 실행](https://github.com/moabogey/docs/wiki/예제코드실행)
 
- - [코딩을 하기 전에](https://github.com/moabogey/docs/wiki/코딩하기전에)
+- [코딩을 하기 전에](https://github.com/moabogey/docs/wiki/코딩하기전에)
 
- - [예제 코드 분석](https://github.com/moabogey/docs/wiki/예제코드분석)
+- [예제 코드 분석](https://github.com/moabogey/docs/wiki/예제코드분석)
 
- - [봇 개발 하기](https://github.com/moabogey/docs/wiki/봇개발하기)
+- [봇 개발 하기](https://github.com/moabogey/docs/wiki/봇개발하기)
 
 
- ### ⬇️소스코드
+### ⬇️소스코드
+
 
 
 ```python
@@ -348,31 +349,140 @@ else:
     # 데이터 베이스를 닫는다.
     my_db.close()
     
-
 ```
 
     🤟https://twitter.com/BTS_ARMY🤟 데이터 수집 중... ⚙️
     📀 수집한 json data: 
     {
-        "title": "“TOMORROW: Global music sensation @BTS_twt kicks off our Summer Concert Series LIVE in Central Park! #BTSonGMA 💜 https://t.co/YB97Xpq1Vf”",
-        "desc": "...",
-        "url": "https://twitter.com/GMA/status/1128276907428986881",
-        "image": "https://pbs.twimg.com/media/D6hx3MkUcAQ2eAy.jpg",
+        "title": "“[#방탄밤][#방밤캠] '작은 것들을 위한 시 (Boy With Luv)' Stage Cam @ 190505 SUPER CONCERT",
+        "desc": "(https://t.co/tO9Rx3...",
+        "url": "https://twitter.com/bts_bighit/status/1128585872142528512",
+        "image": "https://pbs.twimg.com/profile_images/1110920163249905665/rnVrvgVr_400x400.png",
         "siteName": "Twitter",
-        "createdBy": "Good Morning America",
-        "createdAt": "2019-05-14 12:32:00",
-        "timeStamp": "2019-05-14 23:13:14.268986"
+        "createdBy": "BTS_official",
+        "createdAt": "2019-05-15 09:00:00",
+        "timeStamp": "2019-05-15 19:57:44.644929"
     }
     📀 수집한 json data: 
     {
-        "title": "“When the new kid at school takes all the attention.. 😒 ",
-        "desc": "#GWANGsoJelly #MANG ...",
-        "url": "https://twitter.com/BT21_/status/1128224002634178562",
-        "image": "https://pbs.twimg.com/media/D6hBvw-UUAASTna.jpg:large",
+        "title": "“THE #BTSArmy lined up overnight for #BTSonGMA — despite the rain and cold #abc7NY https://t.co/8WFUBf0RYN”",
+        "desc": "...",
+        "url": "https://twitter.com/wallerABC7/status/1128600291744653313",
+        "image": "https://pbs.twimg.com/ext_tw_video_thumb/1128600182835372032/pu/img/gqyIeA8LIKL-MuF9.jpg",
         "siteName": "Twitter",
-        "createdBy": "BT21",
-        "createdAt": "2019-05-14 09:02:00",
-        "timeStamp": "2019-05-14 23:13:16.973627"
+        "createdBy": "Derick Waller",
+        "createdAt": "2019-05-15 09:57:00",
+        "timeStamp": "2019-05-15 19:57:45.508217"
+    }
+    📀 수집한 json data: 
+    {
+        "title": "“ARE YOU READY, #ARMY?  #BTSonGMA! 💜",
+        "desc": "@BTS_twt”...",
+        "url": "https://twitter.com/ABC7NY/status/1128591694293798912",
+        "image": "https://pbs.twimg.com/media/D6mQKYuX4AA4OEk.jpg:large",
+        "siteName": "Twitter",
+        "createdBy": "Eyewitness News",
+        "createdAt": "2019-05-15 09:23:00",
+        "timeStamp": "2019-05-15 19:57:46.554769"
+    }
+    📀 수집한 json data: 
+    {
+        "title": "“#BTSonGMA Look at this line stretching down 5th Ave. 4,000 free tickets handed out for this morning’s concert on ABC #abc7NY https://t.co/i555oi8qJH”",
+        "desc": "...",
+        "url": "https://twitter.com/wallerABC7/status/1128577326474846208",
+        "image": "https://pbs.twimg.com/ext_tw_video_thumb/1128577200729534464/pu/img/ZNqUwaBNT5iYHMZf.jpg",
+        "siteName": "Twitter",
+        "createdBy": "Derick Waller",
+        "createdAt": "2019-05-15 08:26:00",
+        "timeStamp": "2019-05-15 19:57:47.614443"
+    }
+    📀 수집한 json data: 
+    {
+        "title": "“#BTSonGMA FINAL COUNTDOWN: The #BTSArmy is moments away from @GMA's Summer Concert Series kick-off with @BTS_twt! Our @willganss brought hot coffee to the armys camped out in the cold and rain... some who've been there more than a week! https://t.co/6QEjXiT6U4”",
+        "desc": "...",
+        "url": "https://twitter.com/abcWNN/status/1128572036488392704",
+        "image": "https://pbs.twimg.com/media/D6l-R3LUYAETwFg.jpg",
+        "siteName": "Twitter",
+        "createdBy": "ABC World News Now",
+        "createdAt": "2019-05-15 08:05:00",
+        "timeStamp": "2019-05-15 19:57:48.918944"
+    }
+    📀 수집한 json data: 
+    {
+        "title": "“Officer Nuccio warming up the #BTSarmy as they enter for the @BTS_twt @GMA Concert. #BTSonGMA 💜 https://t.co/ij6tDNq9Qf”",
+        "desc": "...",
+        "url": "https://twitter.com/NYPD19Pct/status/1128606503450099712",
+        "image": "https://pbs.twimg.com/ext_tw_video_thumb/1128606411804618752/pu/img/7zdcNgVH_oGbkQ64.jpg",
+        "siteName": "Twitter",
+        "createdBy": "NYPD 19th Precinct  💜",
+        "createdAt": "2019-05-15 10:22:00",
+        "timeStamp": "2019-05-15 19:57:50.194251"
+    }
+    📀 수집한 json data: 
+    {
+        "title": "“Some of these fans have been in line for days and are very excited, so we called in officer Kim of @nypdrecruit for backup! ",
+        "desc": "#BTSarmy, you’ve com...",
+        "url": "https://twitter.com/NYPDCentralPark/status/1128610096890748929",
+        "image": "https://pbs.twimg.com/ext_tw_video_thumb/1128609905743732736/pu/img/1CT_qcU_jHzVZX8R.jpg",
+        "siteName": "Twitter",
+        "createdBy": "NYPD Central Park  💜",
+        "createdAt": "2019-05-15 10:36:00",
+        "timeStamp": "2019-05-15 19:57:51.657471"
+    }
+    📀 수집한 json data: 
+    {
+        "title": "“much love to all of the @BTS_ARMY hanging out in #NYC at @GMA waiting to see the greatest group EVER 💜💜💜 will we see #OurGirlHalsey or the 8th member @OnAirRomeo?  while you're chilling keep watching their @iHeartRadio @MostRequestLive @AskAnythingChat https://t.co/d7mhLsqe8O”",
+        "desc": "...",
+        "url": "https://twitter.com/AskAnythingChat/status/1128604376757612544",
+        "image": "https://pbs.twimg.com/profile_images/837621498827321344/aBKz3lCm_400x400.jpg",
+        "siteName": "Twitter",
+        "createdBy": "Ask Anything",
+        "createdAt": "2019-05-15 10:13:00",
+        "timeStamp": "2019-05-15 19:57:52.814409"
+    }
+    📀 수집한 json data: 
+    {
+        "title": "“GMA? Good Morning A.R.M.Y! ",
+        "desc": "#BTS_TODAY 190515 Go...",
+        "url": "https://twitter.com/BTS_ARMY/status/1128597409083187200",
+        "image": "https://pbs.twimg.com/media/D6mVWgFV4AE9XPG.jpg:large",
+        "siteName": "Twitter",
+        "createdBy": "BTS A.R.M.Y",
+        "createdAt": "2019-05-15 09:46:00",
+        "timeStamp": "2019-05-15 19:57:54.544924"
+    }
+    📀 수집한 json data: 
+    {
+        "title": "“[#방탄밤][#방밤캠] 'DNA' Stage Cam @ 190505 SUPER CONCERT",
+        "desc": "(https://t.co/RcWxoC...",
+        "url": "https://twitter.com/bts_bighit/status/1128593412288966656",
+        "image": "https://pbs.twimg.com/profile_images/1110920163249905665/rnVrvgVr_400x400.png",
+        "siteName": "Twitter",
+        "createdBy": "BTS_official",
+        "createdAt": "2019-05-15 09:30:00",
+        "timeStamp": "2019-05-15 19:57:55.365540"
+    }
+    📀 수집한 json data: 
+    {
+        "title": "“BUZZ BITES: The @bts_bighit ARMY Has Been Camping Out Near Central Park Since Last Week To See K-Pop Sensation @BTS_ARMY #BTSonGMA”",
+        "desc": "...",
+        "url": "https://twitter.com/Buzz_Access/status/1128579176653475840",
+        "image": "https://pbs.twimg.com/media/D6mEgbjUYAAf_Zq.jpg:large",
+        "siteName": "Twitter",
+        "createdBy": "BUZZ",
+        "createdAt": "2019-05-15 08:33:00",
+        "timeStamp": "2019-05-15 19:57:56.305820"
+    }
+    📀 수집한 json data: 
+    {
+        "title": "“roses are red",
+        "desc": "violets r blueour lo...",
+        "url": "https://twitter.com/BTS_ARMY/status/1128537701655896064",
+        "image": "https://pbs.twimg.com/media/D6lfDGNUIAEGbE7.jpg:large",
+        "siteName": "Twitter",
+        "createdBy": "BTS A.R.M.Y",
+        "createdAt": "2019-05-15 05:48:00",
+        "timeStamp": "2019-05-15 19:57:58.112712"
     }
 
 
@@ -381,7 +491,7 @@ else:
 <style>
   .card {
     width: 340px;
-    padding-bottom: 20px;
+    margin-bottom: 20px;
     border: 1px solid #DDDDDD;
     border-radius: 4px;
     overflow: hidden;
@@ -412,12 +522,12 @@ else:
   }
 </style>
 <div class="card">
-  <img src=https://pbs.twimg.com/media/D6hx3MkUcAQ2eAy.jpg alt="Image" class="center">
+  <img src="https://pbs.twimg.com/profile_images/1110920163249905665/rnVrvgVr_400x400.png" alt="Image" class="center">
   <div class="card_item">
     <h5>Twitter</h5>
-    <h4><b>“TOMORROW: Global music sensation @BTS_twt kicks off our Summer Concert Series LIVE in Central Park! #BTSonGMA 💜 https://t.co/YB97Xpq1Vf”</b></h4> 
+    <h4><b>“[#방탄밤][#방밤캠] '작은 것들을 위한 시 (Boy With Luv)' Stage Cam @ 190505 SUPER CONCERT</b></h4> 
     <hr>
-    <p> By Good Morning America </p>
+    <p> By BTS_official </p>
   </div>
 </div>
 
@@ -428,7 +538,7 @@ else:
 <style>
   .card {
     width: 340px;
-    padding-bottom: 20px;
+    margin-bottom: 20px;
     border: 1px solid #DDDDDD;
     border-radius: 4px;
     overflow: hidden;
@@ -459,12 +569,482 @@ else:
   }
 </style>
 <div class="card">
-  <img src=https://pbs.twimg.com/media/D6hBvw-UUAASTna.jpg:large alt="Image" class="center">
+  <img src="https://pbs.twimg.com/ext_tw_video_thumb/1128600182835372032/pu/img/gqyIeA8LIKL-MuF9.jpg" alt="Image" class="center">
   <div class="card_item">
     <h5>Twitter</h5>
-    <h4><b>“When the new kid at school takes all the attention.. 😒 </b></h4> 
+    <h4><b>“THE #BTSArmy lined up overnight for #BTSonGMA — despite the rain and cold #abc7NY https://t.co/8WFUBf0RYN”</b></h4> 
     <hr>
-    <p> By BT21 </p>
+    <p> By Derick Waller </p>
+  </div>
+</div>
+
+
+
+
+
+<style>
+  .card {
+    width: 340px;
+    margin-bottom: 20px;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .center {
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .card_item {
+    width: 340px;
+    padding: 5px 10px;
+  }
+  hr { 
+    display: flex;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: 100px;
+    border-style: inset;
+    border-width: 1px;
+  } 
+  h5 {
+  	color: blue;
+  }
+</style>
+<div class="card">
+  <img src="https://pbs.twimg.com/media/D6mQKYuX4AA4OEk.jpg:large" alt="Image" class="center">
+  <div class="card_item">
+    <h5>Twitter</h5>
+    <h4><b>“ARE YOU READY, #ARMY?  #BTSonGMA! 💜</b></h4> 
+    <hr>
+    <p> By Eyewitness News </p>
+  </div>
+</div>
+
+
+
+
+
+<style>
+  .card {
+    width: 340px;
+    margin-bottom: 20px;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .center {
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .card_item {
+    width: 340px;
+    padding: 5px 10px;
+  }
+  hr { 
+    display: flex;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: 100px;
+    border-style: inset;
+    border-width: 1px;
+  } 
+  h5 {
+  	color: blue;
+  }
+</style>
+<div class="card">
+  <img src="https://pbs.twimg.com/ext_tw_video_thumb/1128577200729534464/pu/img/ZNqUwaBNT5iYHMZf.jpg" alt="Image" class="center">
+  <div class="card_item">
+    <h5>Twitter</h5>
+    <h4><b>“#BTSonGMA Look at this line stretching down 5th Ave. 4,000 free tickets handed out for this morning’s concert on ABC #abc7NY https://t.co/i555oi8qJH”</b></h4> 
+    <hr>
+    <p> By Derick Waller </p>
+  </div>
+</div>
+
+
+
+
+
+<style>
+  .card {
+    width: 340px;
+    margin-bottom: 20px;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .center {
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .card_item {
+    width: 340px;
+    padding: 5px 10px;
+  }
+  hr { 
+    display: flex;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: 100px;
+    border-style: inset;
+    border-width: 1px;
+  } 
+  h5 {
+  	color: blue;
+  }
+</style>
+<div class="card">
+  <img src="https://pbs.twimg.com/media/D6l-R3LUYAETwFg.jpg" alt="Image" class="center">
+  <div class="card_item">
+    <h5>Twitter</h5>
+    <h4><b>“#BTSonGMA FINAL COUNTDOWN: The #BTSArmy is moments away from @GMA's Summer Concert Series kick-off with @BTS_twt! Our @willganss brought hot coffee to the armys camped out in the cold and rain... some who've been there more than a week! https://t.co/6QEjXiT6U4”</b></h4> 
+    <hr>
+    <p> By ABC World News Now </p>
+  </div>
+</div>
+
+
+
+
+
+<style>
+  .card {
+    width: 340px;
+    margin-bottom: 20px;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .center {
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .card_item {
+    width: 340px;
+    padding: 5px 10px;
+  }
+  hr { 
+    display: flex;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: 100px;
+    border-style: inset;
+    border-width: 1px;
+  } 
+  h5 {
+  	color: blue;
+  }
+</style>
+<div class="card">
+  <img src="https://pbs.twimg.com/ext_tw_video_thumb/1128606411804618752/pu/img/7zdcNgVH_oGbkQ64.jpg" alt="Image" class="center">
+  <div class="card_item">
+    <h5>Twitter</h5>
+    <h4><b>“Officer Nuccio warming up the #BTSarmy as they enter for the @BTS_twt @GMA Concert. #BTSonGMA 💜 https://t.co/ij6tDNq9Qf”</b></h4> 
+    <hr>
+    <p> By NYPD 19th Precinct  💜 </p>
+  </div>
+</div>
+
+
+
+
+
+<style>
+  .card {
+    width: 340px;
+    margin-bottom: 20px;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .center {
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .card_item {
+    width: 340px;
+    padding: 5px 10px;
+  }
+  hr { 
+    display: flex;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: 100px;
+    border-style: inset;
+    border-width: 1px;
+  } 
+  h5 {
+  	color: blue;
+  }
+</style>
+<div class="card">
+  <img src="https://pbs.twimg.com/ext_tw_video_thumb/1128609905743732736/pu/img/1CT_qcU_jHzVZX8R.jpg" alt="Image" class="center">
+  <div class="card_item">
+    <h5>Twitter</h5>
+    <h4><b>“Some of these fans have been in line for days and are very excited, so we called in officer Kim of @nypdrecruit for backup! </b></h4> 
+    <hr>
+    <p> By NYPD Central Park  💜 </p>
+  </div>
+</div>
+
+
+
+
+
+<style>
+  .card {
+    width: 340px;
+    margin-bottom: 20px;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .center {
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .card_item {
+    width: 340px;
+    padding: 5px 10px;
+  }
+  hr { 
+    display: flex;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: 100px;
+    border-style: inset;
+    border-width: 1px;
+  } 
+  h5 {
+  	color: blue;
+  }
+</style>
+<div class="card">
+  <img src="https://pbs.twimg.com/profile_images/837621498827321344/aBKz3lCm_400x400.jpg" alt="Image" class="center">
+  <div class="card_item">
+    <h5>Twitter</h5>
+    <h4><b>“much love to all of the @BTS_ARMY hanging out in #NYC at @GMA waiting to see the greatest group EVER 💜💜💜 will we see #OurGirlHalsey or the 8th member @OnAirRomeo?  while you're chilling keep watching their @iHeartRadio @MostRequestLive @AskAnythingChat https://t.co/d7mhLsqe8O”</b></h4> 
+    <hr>
+    <p> By Ask Anything </p>
+  </div>
+</div>
+
+
+
+
+
+<style>
+  .card {
+    width: 340px;
+    margin-bottom: 20px;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .center {
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .card_item {
+    width: 340px;
+    padding: 5px 10px;
+  }
+  hr { 
+    display: flex;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: 100px;
+    border-style: inset;
+    border-width: 1px;
+  } 
+  h5 {
+  	color: blue;
+  }
+</style>
+<div class="card">
+  <img src="https://pbs.twimg.com/media/D6mVWgFV4AE9XPG.jpg:large" alt="Image" class="center">
+  <div class="card_item">
+    <h5>Twitter</h5>
+    <h4><b>“GMA? Good Morning A.R.M.Y! </b></h4> 
+    <hr>
+    <p> By BTS A.R.M.Y </p>
+  </div>
+</div>
+
+
+
+
+
+<style>
+  .card {
+    width: 340px;
+    margin-bottom: 20px;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .center {
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .card_item {
+    width: 340px;
+    padding: 5px 10px;
+  }
+  hr { 
+    display: flex;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: 100px;
+    border-style: inset;
+    border-width: 1px;
+  } 
+  h5 {
+  	color: blue;
+  }
+</style>
+<div class="card">
+  <img src="https://pbs.twimg.com/profile_images/1110920163249905665/rnVrvgVr_400x400.png" alt="Image" class="center">
+  <div class="card_item">
+    <h5>Twitter</h5>
+    <h4><b>“[#방탄밤][#방밤캠] 'DNA' Stage Cam @ 190505 SUPER CONCERT</b></h4> 
+    <hr>
+    <p> By BTS_official </p>
+  </div>
+</div>
+
+
+
+
+
+<style>
+  .card {
+    width: 340px;
+    margin-bottom: 20px;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .center {
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .card_item {
+    width: 340px;
+    padding: 5px 10px;
+  }
+  hr { 
+    display: flex;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: 100px;
+    border-style: inset;
+    border-width: 1px;
+  } 
+  h5 {
+  	color: blue;
+  }
+</style>
+<div class="card">
+  <img src="https://pbs.twimg.com/media/D6mEgbjUYAAf_Zq.jpg:large" alt="Image" class="center">
+  <div class="card_item">
+    <h5>Twitter</h5>
+    <h4><b>“BUZZ BITES: The @bts_bighit ARMY Has Been Camping Out Near Central Park Since Last Week To See K-Pop Sensation @BTS_ARMY #BTSonGMA”</b></h4> 
+    <hr>
+    <p> By BUZZ </p>
+  </div>
+</div>
+
+
+
+
+
+<style>
+  .card {
+    width: 340px;
+    margin-bottom: 20px;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .center {
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .card_item {
+    width: 340px;
+    padding: 5px 10px;
+  }
+  hr { 
+    display: flex;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: 100px;
+    border-style: inset;
+    border-width: 1px;
+  } 
+  h5 {
+  	color: blue;
+  }
+</style>
+<div class="card">
+  <img src="https://pbs.twimg.com/media/D6lfDGNUIAEGbE7.jpg:large" alt="Image" class="center">
+  <div class="card_item">
+    <h5>Twitter</h5>
+    <h4><b>“roses are red</b></h4> 
+    <hr>
+    <p> By BTS A.R.M.Y </p>
   </div>
 </div>
 
