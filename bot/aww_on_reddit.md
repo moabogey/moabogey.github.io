@@ -22,21 +22,21 @@ title: aww_on_reddit
 
 - 터미널 실행
 
-  - (윈도우즈 🖼) Windows PowerShell을 실행한다.
+  - 🖼 Windows PowerShell을 실행한다.
 
-  - (맥 🍎) Terminal을 실행한다.
+  - 🍎 Terminal을 실행한다.
 
 - 작업할 폴더를 생성한다.
 
-  ```
-  mkdir MyWork
-  ```
+```
+mkdir MyWork
+```
 
 - 작업할 폴더로 이동한다.
 
-  ```
-  cd MyWork
-  ```
+```
+cd MyWork
+```
 
 - 깃 클론 (Git Clone)을 수행한다.
 
@@ -46,15 +46,15 @@ git clone https://github.com/skettee/aww_on_reddit.git
 
 - 복사한 코드의 폴더로 이동한다.
 
-  ```
-  cd aww_on_reddit
-  ```
+```
+cd aww_on_reddit
+```
 
 - VSCode를 실행한다.
 
-  ```
-  code .
-  ```
+```
+code .
+```
 
 - 왼쪽 EXPLORE에서 `aww_on_reddit.py`를 선택한다.
 
@@ -62,7 +62,7 @@ git clone https://github.com/skettee/aww_on_reddit.git
 
 - `Python 3.6.8 64-bit ('moabogey':conda)`를 선택한다.
 
-- 소스 코드에 RunCell | Run Below에서 `Run Below`를 누른다.
+- 소스 코드에 `RunCell | Run Below`에서 `Run Below`를 누른다.
 
 - 데이터가 정상적으로 수집이 되는지 오른쪽 Python Interactive에서 확인한다.
 
@@ -88,20 +88,20 @@ aww_on_reddit.py를 분석합니다.
 - 저장된 HTML파일 (reddit_source.html)을 열어 봅니다. 여기서 우리는 "포스트의 리스트"를 표현하는 구간을 찾을 것입니다. **포스트**는 제목, 내용, 이미지, 작성자, 작성 날짜 및 페이지 위치(URL)를 가지고 있는 하나의 문서를 나타내는 용어로 사용합니다.
 
 ```
-+-------------+ +->   <div class="scrollerItem">
++------------+ +-> <div class="scrollerItem">
 |   Post 1
 |  (Item 1)
-+-------------+ +->   </div>
++------------+ +-> </div>
 
-+-------------+ +->   <div class="scrollerItem">
++------------+ +-> <div class="scrollerItem">
 |   Post 2
 |  (Item 2)
-+-------------+ +->   </div>
++------------+ +-> </div>
 
-+-------------+ +->  <div class="scrollerItem">
++------------+ +-> <div class="scrollerItem">
 |   Post3
 |  (Item 3)
-+-------------+ +->   </div>
++------------+ +-> </div>
 ```
 
 - 각각의 포스트는 `<div class="scrollerItem">` 에서 시작 되고 `</div>`로 끝난다는 것을 알아내는 것이 중요합니다. 이것은 사이트마다 다르기 때문에 이것을 찾아내는 것은 약간의 경험이 필요합니다.
@@ -350,13 +350,13 @@ else:
     https://www.reddit.com/r/aww/ 데이터 수집 중... ⚙️
     📀 수집한 json data: 
     {
-        "title": "That smile",
-        "url": "https://www.reddit.com/r/aww/comments/bougad/that_smile/",
-        "image": "https://external-preview.redd.it/N8Bp2obFNS_cA9qA8pEGrfvjy8FjWWX_L-XN-yG58Gs.png?format=pjpg&auto=webp&s=2231f13bb7209c95fa069d3d22eff5ddc1013b93",
+        "title": "My SO is sick with the cold this week so our five cats are keeping her warm",
+        "url": "https://www.reddit.com/r/aww/comments/bow60b/my_so_is_sick_with_the_cold_this_week_so_our_five/",
+        "image": "https://preview.redd.it/pdnch22apcy21.jpg?auto=webp&s=51bbe93ad945260c29513a555e877dfd9339b4cd",
         "siteName": "reddit",
-        "createdBy": "ShoreSWBF",
-        "createdAt": "2019-05-15 23:20:03.806821",
-        "timeStamp": "2019-05-15 23:20:20.070667"
+        "createdBy": "Rain_GIitter",
+        "createdAt": "2019-05-16 00:49:36.878166",
+        "timeStamp": "2019-05-16 00:49:41.388228"
     }
 
 
@@ -396,12 +396,12 @@ else:
   }
 </style>
 <div class="card">
-  <img src="https://external-preview.redd.it/N8Bp2obFNS_cA9qA8pEGrfvjy8FjWWX_L-XN-yG58Gs.png?format=pjpg&auto=webp&s=2231f13bb7209c95fa069d3d22eff5ddc1013b93" alt="Image" class="center">
+  <img src="https://preview.redd.it/pdnch22apcy21.jpg?auto=webp&s=51bbe93ad945260c29513a555e877dfd9339b4cd" alt="Image" class="center">
   <div class="card_item">
     <h5>reddit</h5>
-    <h4><b>That smile</b></h4> 
+    <h4><b>My SO is sick with the cold this week so our five cats are keeping her warm</b></h4> 
     <hr>
-    <p> By ShoreSWBF </p>
+    <p> By Rain_GIitter </p>
   </div>
 </div>
 

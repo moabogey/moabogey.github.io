@@ -21,9 +21,9 @@ title: best_on_ruliweb
 
 - 터미널 실행
 
-  1. 🖼  Windows PowerShell을 실행한다.
+  - 🖼  Windows PowerShell을 실행한다.
 
-  2. 🍎 Terminal을 실행한다.
+  - 🍎 Terminal을 실행한다.
 
 - 작업할 폴더를 생성한다.
 
@@ -61,7 +61,7 @@ code .
 
 - `Python 3.6.8 64-bit ('moabogey':conda)`를 선택한다.
 
-- 소스 코드에 RunCell | Run Below에서 `Run Below`를 누른다.
+- 소스 코드에 `RunCell | Run Below`에서 `Run Below`를 누른다.
 
 - 데이터가 정상적으로 수집이 되는지 오른쪽 Python Interactive에서 확인한다.
 
@@ -360,7 +360,7 @@ else:
         "siteName": "루리웹",
         "createdBy": "라프&히르",
         "createdAt": "2019-05-06 09:30:06",
-        "timeStamp": "2019-05-15 23:32:27.723747"
+        "timeStamp": "2019-05-16 00:30:23.404009"
     }
 
 
